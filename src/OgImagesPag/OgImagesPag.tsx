@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { ListCard } from '../components/listCard/listCard';
 import './ogImagesPag.css';
-import { ListCard } from '../compoents/listCard/listCard';
 
 export function OgImagesPag() {
     const categories = ['All', 'Web', 'Interface', 'Branding', 'Product', 'Typography', 'Motion', 'Illustration', '3D'];

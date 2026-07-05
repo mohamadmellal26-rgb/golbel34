@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Sidebar } from '../compoents/Sidebar/Sidebar';
+import { Sidebar } from '../components/Sidebar/Sidebar';
 import './webSitPag.css';
 
 // تم تعريف البيانات هنا لضمان السرعة والـ Type Safety

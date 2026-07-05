@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DetailSidebar } from '../compoents/DetailSidebar/DetailSidebar';
+import { DetailSidebar } from '../components/DetailSidebar/DetailSidebar';
 import './AppScreenshotsPag.css';
 
 interface ScreenshotItem {

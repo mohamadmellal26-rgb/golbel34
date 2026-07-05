@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DetailSidebar } from '../../compoents/DetailSidebar/DetailSidebar'; // استيراد السايدبار التفصيلي الخاص بك
+import { DetailSidebar } from '../DetailSidebar/DetailSidebar'; // استيراد السايدبار التفصيلي الخاص بك
 import './listCard.css';
 
 // 1. تعريف واجهة البيانات

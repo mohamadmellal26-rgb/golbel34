@@ -1,10 +1,10 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'; // استيراد أدوات التوجيه القياسية
 import './App.css';
-import { HomePage } from './homePag/homePag';
-import { WebSitPag } from './webSitPag/webSitPag';
-import { OgImagesPag } from './OgImagesPag/OgImagesPag';
 import { AppScreenshots } from './AppScreenshotsPag/AppScreenshotsPag';
-import { Sidebar } from './compoents/Sidebar/Sidebar';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { HomePage } from './homePag/homePag';
+import { OgImagesPag } from './OgImagesPag/OgImagesPag';
+import { WebSitPag } from './webSitPag/webSitPag';
 
 function App() {
   return (

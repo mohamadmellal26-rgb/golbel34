@@ -1,6 +1,6 @@
-import { Header } from '../compoents/header/header';
-import { ListCard } from '../compoents/listCard/listCard';
-import { Sidebar } from '../compoents/Sidebar/Sidebar';
+import { Header } from '../components/header/header';
+import { ListCard } from '../components/listCard/listCard';
+import { Sidebar } from '../components/Sidebar/Sidebar';
 
 export function HomePage() {
     return (
@@ -24,9 +24,9 @@ export function HomePage() {
 
                 {/* منطقة شبكة التصاميم أو المعرض الأساسي */}
                 <main className="main-content-area" style={{ padding: '24px', flex: 1 }}>
-    {/* استدعاء المكون مباشرة ليأخذ كامل العرض والتدفق الطبيعي أسفل الهيدر */}
-    <ListCard />
-</main>
+                    {/* استدعاء المكون مباشرة ليأخذ كامل العرض والتدفق الطبيعي أسفل الهيدر */}
+                    <ListCard />
+                </main>
             </div>
 
         </div>
