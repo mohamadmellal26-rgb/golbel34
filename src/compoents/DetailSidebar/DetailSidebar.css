@@ -1,0 +1,206 @@
+/* 1. الحاوية الكبرى الشفافة (تغطي الشاشة بالكامل) */
+.split-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    font-family: system-ui, -apple-system, sans-serif;
+
+    /* خلفية شبه شفافة مع تأثير الضباب (Blur) لتشبه اللقطة */
+    background-color: rgba(245, 245, 245, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* 2. السايدبار الأيسر الثابت والأبيض */
+.split-modal-sidebar {
+    width: 500px;
+    min-width: 340px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 2;
+    /* ليبقى فوق الخلفية المموهة */
+}
+
+/* هيدر السايدبار الذي يحوي الأزرار الدائرية */
+.modal-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px 16px 32px;
+}
+
+.modal-nav-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.circle-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f5f5f5;
+    color: #737373;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.circle-icon-btn:hover {
+    background-color: #e5e5e5;
+    color: #171717;
+}
+
+/* 3. محتوى السايدبار (النصوص والبيانات) */
+.split-modal-content {
+    padding: 0 32px 40px 32px;
+}
+
+.meta-breadcrumb {
+    font-size: 0.85rem;
+    color: #737373;
+    margin-bottom: 8px;
+}
+
+.meta-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #171717;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+/* قسم المؤلف/الناشر */
+.meta-author-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.author-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 0.9rem;
+    color: #171717;
+    font-weight: 500;
+}
+
+/* الوصف */
+.meta-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #737373;
+    margin-bottom: 40px;
+}
+
+/* 4. جدول الخصائص (Key-Value) مفصول بخطوط رقيقة */
+.meta-details-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.875rem;
+}
+
+.meta-row:first-child {
+    border-top: 1px solid #f0f0f0;
+}
+
+.meta-key {
+    color: #737373;
+}
+
+.meta-value {
+    color: #171717;
+    text-align: right;
+    white-space: pre-line;
+    /* هام جداً: للسماح بسطر جديد باستخدام \n في النصوص المزدوجة */
+}
+
+/* 5. القسم الأيمن (منطقة عرض الفيديو) */
+.split-modal-preview-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    cursor: zoom-out;
+    /* للإشارة إلى أن النقر هنا سيغلق النافذة */
+}
+
+/* الحاوية البيضاء المركزية للفيديو المستوحاة من اللقطة */
+.preview-media-container {
+    width: 50%;
+    max-width: 700px;
+    /* تحكم بحجم المربع هنا */
+    aspect-ratio: 1 / 1;
+    /* يمكنك تغييرها لـ 16/9 إذا كانت فيديوهاتك مستطيلة */
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    cursor: default;
+    /* إلغاء مؤشر التكبير بداخل الحاوية */
+}
+
+.preview-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* حركات الدخول */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 6. التجاوب مع شاشات الجوال */
+@media (max-width: 900px) {
+    .split-modal-overlay {
+        flex-direction: column-reverse;
+        /* نقل السايدبار للأسفل في الجوال */
+    }
+
+    .split-modal-sidebar {
+        width: 100%;
+        height: 50vh;
+        /* يأخذ نصف الشاشة السفلي */
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .split-modal-preview-area {
+        height: 50vh;
+        padding: 20px;
+    }
+}

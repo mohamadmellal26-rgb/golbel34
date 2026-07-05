@@ -1,0 +1,174 @@
+/* تصميم الحاوية الرئيسية للهيدر */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: sans-serif;
+    user-select: none;
+    border-bottom: 1px solid #f3f4f6;
+    box-sizing: border-box;
+}
+
+/* الجزء العلوي: العنوان وعناصر الترتيب */
+.header-top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.header-title-box {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.header-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: flex-end;
+}
+
+.last-updated {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* قائمة الترتيب المنسدلة */
+.select-wrapper {
+    position: relative;
+}
+
+.sort-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 16px;
+    padding-right: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out;
+    outline: none;
+}
+
+.sort-select:hover {
+    border-color: #d1d5db;
+}
+
+.select-icon {
+    position: absolute;
+    inset-y: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.select-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* الجزء السفلي: شريط التصنيفات */
+.categories-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    scrollbar-width: none;
+    /* إخفاء شريط التمرير لـ Firefox */
+    -ms-overflow-style: none;
+    /* إخفاء شريط التمرير لـ IE */
+}
+
+/* إخفاء شريط التمرير لـ Chrome, Safari, Opera */
+.categories-container::-webkit-scrollbar {
+    display: none;
+}
+
+.categories-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    width: max-content;
+}
+
+/* أزرار التصنيفات */
+.category-btn {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+/* الزر غير النشط */
+.btn-inactive {
+    background-color: #f3f3f3;
+    color: #4b5563;
+}
+
+.btn-inactive:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+/* الزر النشط المستوحى من All */
+.btn-active {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* شاشات الـ Responsive لتطابق التوزيع */
+@media (min-width: 640px) {
+    .header-top {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-meta {
+        align-self: auto;
+    }
+}
+
+@media (max-width: 639px) {
+    .header-subtitle {
+        display: none;
+        /* إخفاء الوصف في الشاشات الصغيرة جداً للمحافظة على المساحة */
+    }
+}

@@ -1,0 +1,175 @@
+/* الحاوية الرئيسية للشريط الجانبي */
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #f0f0f0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* الجزء العلوي: اللوجو وعدد المتصلين */
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sidebar-logo {
+  width: 32px;
+  height: 32px;
+  background-color: #000000;
+  border-radius: 4px;
+  /* شكل تقريبي للوجو الأسود المائل في الصورة */
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+}
+
+.online-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+/* قائمة الروابط */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  font-size: 18px;
+  color: #666666;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s ease;
+}
+
+.menu-item:hover, .menu-item.active {
+  color: #000000;
+}
+
+/* شارة "new" المكتوبة بخط يدوي أو مميزة */
+.badge-new {
+  color: #e0245e;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* الجزء السفلي: صندوق الإعلان والاشتراك */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.ad-box {
+  background-color: #ffffff;
+}
+
+.ad-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ad-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.ad-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.ad-subtitle {
+  font-size: 13px;
+  color: #888888;
+  margin-top: 2px;
+}
+
+.ad-description {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.ad-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f0f0;
+  color: #111111;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  width: max-content;
+  transition: background-color 0.15s ease;
+}
+
+.ad-button:hover {
+  background-color: #e5e5e5;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  margin: 12px 0;
+}
+
+.subscribe-text {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+.subscribe-link {
+  color: #666666;
+  text-decoration: underline;
+}
+
+.copyright-text {
+  font-size: 13px;
+  color: #888888;
+  margin-top: 8px;
+}

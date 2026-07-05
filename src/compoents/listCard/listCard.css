@@ -1,0 +1,82 @@
+/* حاوية المعرض بنظام الأعمدة (Masonry Columns) */
+.video-grid-container {
+    column-count: 3;
+    column-gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ضبط عدد الأعمدة للشاشات المختلفة */
+@media (max-width: 1024px) {
+    .video-grid-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .video-grid-container {
+        column-count: 1;
+    }
+}
+
+/* كرت الفيديو الفردي */
+.list-card-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    /* هذا السطر يمنع خروج العناصر الابنة عن الحاوية أو تداخل الـ Columns */
+    transform: translateZ(0);
+    box-sizing: border-box;
+}
+
+/* حاوية الفيديو المرنة */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+
+/* تشغيل الفيديو بأبعاده الأصلية الحقيقية */
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* زر السهم المائل الاحترافي */
+.card-arrow-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    /* تأثير زجاجي ناعم ليظهر السهم بوضوح */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+
+.list-card-container:hover .card-arrow-btn {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+.list-card-content {
+    padding: 0;
+}

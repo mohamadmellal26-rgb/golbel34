@@ -1,0 +1,86 @@
+:root {
+  --bg-dark-page: #ffffff;
+  --text-main-color: #171717;
+  --text-muted-color: #737373;
+  --btn-bg-idle: #f5f5f5;
+  --btn-bg-active: #171717;
+  --btn-text-active: #ffffff;
+}
+
+.websites-page-container {
+  background-color: var(--bg-dark-page);
+  color: var(--text-main-color);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-left: 260px;
+  padding: 24px 40px;
+  box-sizing: border-box;
+}
+
+/* حل مشكلة التراص بـ Masonry */
+.websites-grid {
+  column-count: 3;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.website-card-wrapper {
+  break-inside: avoid; /* يمنع انقسام الكارت */
+  margin-bottom: 24px; /* المسافة الرأسية بين الكروت */
+  width: 100%;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  display: block;
+}
+
+.website-display-img {
+  width: 100%;
+  height: auto; /* أبعاد الصورة الأصلية */
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* زر السهم */
+.arrow-diagonal-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: rgba(23, 23, 23, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.image-container:hover .website-display-img {
+  transform: scale(1.03);
+}
+
+.image-container:hover .arrow-diagonal-btn {
+  opacity: 1;
+}
+
+/* تجاوب الشاشات */
+@media (max-width: 1200px) { .websites-grid { column-count: 2; } }
+@media (max-width: 768px) { 
+  .websites-page-container { margin-left: 0; padding: 20px; }
+  .websites-grid { column-count: 1; }
+}
+
+/* تنسيقات إضافية للهيدر والفلترة (تم تثبيتها) */
+.websites-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+.filter-sorting-bar { display: flex; justify-content: space-between; margin-bottom: 32px; }
+.filter-btn { background-color: var(--btn-bg-idle); border: none; border-radius: 20px; padding: 8px 16px; cursor: pointer; }

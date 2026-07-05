@@ -1,0 +1,103 @@
+.screenshots-page {
+    padding: 24px 40px;
+}
+
+/* استخدام column-count لترتيب العناصر المتفاوتة في الطول بشكل متراص */
+.screenshots-masonry-grid {
+    column-count: 4; /* عدد الأعمدة */
+    column-gap: 24px;
+}
+
+.screenshot-card {
+    position: relative;
+    margin-bottom: 24px;
+    break-inside: avoid; /* منع الكارت من الانقسام بين الأعمدة */
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.screen-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-card:hover .screen-img {
+    transform: scale(1.02);
+}
+
+/* شارة العدد (الزاوية العلوية اليمنى) */
+.count-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* التجاوب */
+@media (max-width: 1024px) {
+    .screenshots-masonry-grid { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+    .screenshots-masonry-grid { column-count: 2; }
+}/* تحسين الكارت ليعطي انطباع العمق الموجود في image_3a02e0.jpg */
+.screenshot-card {
+    position: relative;
+    margin-bottom: 24px;
+    break-inside: avoid;
+    border-radius: 20px; /* جعل الحواف أكثر نعومة لتناسب التصميم */
+    overflow: hidden;
+    background: #ffffff;
+    
+    /* إضافة ظل خفيف جداً لتعزيز تأثير الطبقات */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    
+    /* تأثير الـ Blur الخفيف الذي يظهر في الخلفيات داخل الصورة */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* التعديل المهم: شارة العدد */
+.count-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    /* استخدام تباين أعلى ليتناسب مع العناصر الحية */
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    color: #171717;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}/* الحل الجذري لمنع التداخل */
+.screenshots-page {
+    /* دفع الصفحة بالكامل لليمين بقيمة عرض السايدبار (مثلاً 260px) */
+    margin-left: 260px; 
+    padding: 24px 40px;
+    width: calc(100% - 260px); /* تقليص العرض الكلي ليناسب المساحة المتبقية */
+    box-sizing: border-box;
+}
+
+/* الشبكة */
+.screenshots-masonry-grid {
+    column-count: 3; /* قللنا الأعمدة لتعويض المساحة المفقودة بسبب السايدبار */
+    column-gap: 24px;
+}
+
+/* في الشاشات الصغيرة، نلغي الهامش ليظهر السايدبار أو يختفي */
+@media (max-width: 1024px) {
+    .screenshots-page {
+        margin-left: 0;
+        width: 100%;
+    }
+    .screenshots-masonry-grid { column-count: 2; }
+}
