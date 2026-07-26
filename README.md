@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# Golbel34
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React_18-555555?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Language-TypeScript-555555?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Bundler-Vite-555555?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Architecture-Modular-555555?style=for-the-badge" alt="Architecture" />
+</p>
 
-Currently, two official plugins are available:
+> **Golbel34** is a high-performance web application engineered with a strict TypeScript typing system and a lightning-fast Vite build pipeline. Built to deliver a frictionless, responsive user experience with modular component architecture.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ⚡ Core Features & Performance
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Strict Type Safety:** Developed entirely in TypeScript with strict configuration rules (`strictTypeChecked`) to eliminate runtime errors and ensure enterprise-grade reliability.
+* **Optimized Build Pipeline:** Powered by Vite for instantaneous Hot Module Replacement (HMR) and highly optimized production asset bundling.
+* **Modular Component Design:** Scalable directory structure separating business logic, UI components, and state management for maximum maintainability.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Core Framework:** React 18
+* **Language:** TypeScript
+* **Build Tool:** Vite
+* **Linting & Quality:** ESLint with strict type-aware rules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Project Architecture
 
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+```text
+golbel34/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── assets/           # Static media and styles
+│   ├── hooks/            # Custom React hooks
+│   ├── types/            # TypeScript interfaces & types
+│   ├── App.tsx           # Main application root
+│   └── main.tsx          # Application bootstrap
+├── public/               # Public static assets
+├── tsconfig.json         # TypeScript configurations
+└── vite.config.ts        # Vite optimization setup
